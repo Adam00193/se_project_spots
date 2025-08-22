@@ -18,13 +18,18 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 353px;
-  font-family: "Poppins Medium", Arial, Helvetica;
+  font-family: "Poppins", Arial, Helvetica;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
 }
 
 .card__like-btn {
+  cursor: pointer;
+  font-family: "Poppins", Arial, Helvetica;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
   background: transparent;
   background-image: url("../images/union.svg");
   height: 20px;
