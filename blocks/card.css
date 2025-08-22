@@ -21,7 +21,7 @@
   font-family: "Poppins", Arial, Helvetica;
   font-weight: 500;
   font-size: 20px;
-  line-height: 120%;
+  line-height: 1.2;
 }
 
 .card__like-btn {
@@ -32,6 +32,7 @@
   line-height: 1;
   background: transparent;
   background-image: url("../images/union.svg");
+  background-repeat: no-repeat;
   height: 20px;
   width: 23px;
   border: none;
@@ -44,11 +45,15 @@
 }
 
 @media screen and (max-width: 627px) {
+  .card__title {
+    font-size: 16px;
+    line-height: 1;
+  }
   .card__image {
     height: 288px;
   }
   .card__like-btn {
-    height: 18px;
-    width: 20px;
+    height: 20px;
+    width: 25px;
   }
 }
