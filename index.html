@@ -57,7 +57,7 @@
 
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card"> 
+            <li class="card">
               <img
                 src="images/1-photo-by-moritz-feldmann-from-pexels.jpg"
                 alt="A POV photograph from bed through a window, capturing a lodge beside a mountain covered in snow"
@@ -132,6 +132,32 @@
       <footer class="footer">
         <p class="copyright">2025 &copy; Spots</p>
       </footer>
+
+      <div class="modal modal_is-opened">
+        <div class="modal__container">
+          <button type="button" class="modal__close-button">X</button>
+          <h2 class="modal__title">Edit Profile</h2>
+          <form class="modal__form">
+            <label for="profile-name-input" class="modal__label">
+              <input
+                id="profile-name-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your name"
+              />
+            </label>
+            <label for="description-input" class="modal__label">
+              <input
+                id="description-input"
+                type="text"
+                class="modal__input"
+                placeholder="Describe yourself"
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
