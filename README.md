@@ -19,7 +19,6 @@ This project is made so all the elements are displayed correctly on popular scre
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
 
 Hello! Here is my google video link!
-(Update after second submission. I made two videos, scrapping the first one and I forgot to change the link to the final video! Sorry)
 
 https://docs.google.com/videos/d/1-Kqy_znpmWCzwP0wULS31GPH5fCfo_DTxIuvfia1pJ4/edit?usp=sharing
 
