@@ -23,3 +23,11 @@ Hello! Here is my google video link!
 https://docs.google.com/videos/d/1-Kqy_znpmWCzwP0wULS31GPH5fCfo_DTxIuvfia1pJ4/edit?usp=sharing
 
 Good luck and have fun!
+
+Hello! 
+
+Welcome to Triple Peaks Spots! This is a website I have developed during during my educational journey with Triple Ten. 
+This website is the third created at this point of my journey. It was a long project used to teach different features of html, css, and javascript. Here is where you can visit and tour my site. 
+
+https://adam00193.github.io/se_project_spots/
+
