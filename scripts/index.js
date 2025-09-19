@@ -57,14 +57,22 @@ const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
+const cardsList = document.querySelector(".cards__list");
+
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
-  const cardImgEl = cardElement.querySelector(".card__image")
+  const cardImgEl = cardElement.querySelector(".card__image");
 
   cardImgEl.src = data.link;
   cardImgEl.alt = data.name;
   cardTitleEl.textContent = data.name;
+
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-btn_active")
+  })
 
   return cardElement;
 }
@@ -109,8 +117,13 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
 
-  console.log(newPostLinkInput.value + " Link");
-  console.log(newPostCaptionInput.value + " Caption");
+  const inputValues = {
+    link: newPostLinkInput.value,
+    name: newPostCaptionInput.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
 }
@@ -118,5 +131,6 @@ function handleNewPostSubmit(evt) {
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(getCardElement(item));
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
