@@ -133,9 +133,9 @@
 
 }
 
-.modal__close-button_type-preview:hover {
+/* .modal__close-button_type-preview:hover {
 
-}
+} */
 
 @media screen and (max-width: 627px) {
   .modal__close-button {
