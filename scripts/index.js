@@ -86,7 +86,6 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardElement.remove();
-    cardElement = null;
   });
 
   cardImgEl.addEventListener("click", () => {
@@ -96,12 +95,12 @@ function getCardElement(data) {
     openModal(previewModal);
   });
 
+  return cardElement;
+}
+
   previewModalCloseBtn.addEventListener("click", () => {
     closeModal(previewModal);
   });
-
-  return cardElement;
-}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -151,6 +150,7 @@ function handleNewPostSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
 
+  newPostForm.reset();
   closeModal(newPostModal);
 }
 
