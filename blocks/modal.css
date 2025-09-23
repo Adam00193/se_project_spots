@@ -125,17 +125,14 @@
 
 .modal__caption {
   color: white;
+  font-size: 20px;
 }
 
 .modal__close-button_type-preview {
   top: 0;
   right: -52.5px;
-
+  background: transparent url(../images/Close_icon-white) no-repeat;
 }
-/* 
-.modal__close-button_type-preview:hover {
-
-} */
 
 @media screen and (max-width: 627px) {
   .modal__close-button {
@@ -164,7 +161,9 @@
     right: 0;
     top: -48px
   }
-
+  .modal__caption{
+    font-size: 12px;
+  }
   .modal__image {
     max-width: unset;
   }
