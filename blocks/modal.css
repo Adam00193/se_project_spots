@@ -124,8 +124,17 @@
 }
 
 .modal__caption {
-  color: white;
+  margin: 0;
+  padding: 4px 8px;
   font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  position: absolute;
+  background-color: #212121;
+  border-radius: 8px;
+  left: 0;
+  top: calc(100% + 10px);
 }
 
 .modal__close-button_type-preview {
@@ -162,7 +171,7 @@
     top: -48px
   }
   .modal__caption{
-    font-size: 12px;
+    font-size: 18px;
   }
   .modal__image {
     max-width: unset;
