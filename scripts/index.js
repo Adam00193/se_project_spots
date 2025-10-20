@@ -72,14 +72,40 @@ const cardTemplate = document
 const cardsList = document.querySelector(".cards__list");
 
 // OPEN/CLOSE MODALS
+function clickOutside(evt, modal) {
+  if (!modal.contains(evt.target)) {
+    closeModal(modal);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+
+  document.addEventListener("click", (event) => {
+    clickOutside(event, modal);
+  });
 }
+
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("click", (event) =>{
+    clickOutside(event, modal);
+  });
 }
+
 previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
+});
+
+//ALTERNATIVE CLOSING METHODS
+document.addEventListener("keydown", function (evt) {
+  const modalIsOpenedClass = document.querySelectorAll(".modal_is-opened");
+
+  if (evt.key === "Escape") {
+    modalIsOpenedClass.forEach((modal) => {
+      closeModal(modal);
+    });
+  }
 });
 
 editProfileBtn.addEventListener("click", function () {
