@@ -74,28 +74,30 @@ const cardsList = document.querySelector(".cards__list");
 // OPEN/CLOSE MODALS
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener('keydown', handleEscape);
 }
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener('keydown', handleEscape);
 }
 previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
 //ALTERNATIVE CLOSING METHODS
-document.addEventListener("keydown", function (evt) {
-  const modalIsOpenedClass = document.querySelectorAll(".modal_is-opened");
+function handleEscape (evt) {
+  if (evt.key !== 'Escape') return;
 
-  if (evt.key === "Escape") {
-    modalIsOpenedClass.forEach((modal) => {
-      closeModal(modal);
-    });
+  const openModal = document.querySelector('modal_is-opened');
+
+  if(openModal){
+    closeModal(openModal);
   }
-});
+}
 
 document.addEventListener("click", (event) => {
   const modalBackDrop = event.target.closest(".modal");
-  const modalContainer = event.target.closest(".modalContainer");
+  const modalContainer = event.target.closest(".modal__container");
 
   if(modalBackDrop && !modalContainer){
     closeModal(modalBackDrop);
