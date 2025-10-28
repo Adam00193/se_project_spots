@@ -74,23 +74,23 @@ const cardsList = document.querySelector(".cards__list");
 // OPEN/CLOSE MODALS
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  document.addEventListener('keydown', handleEscape);
+  document.addEventListener("keydown", handleEscape);
 }
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener('keydown', handleEscape);
+  document.removeEventListener("keydown", handleEscape);
 }
 previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
 //ALTERNATIVE CLOSING METHODS
-function handleEscape (evt) {
-  if (evt.key !== 'Escape') return;
+function handleEscape(evt) {
+  if (evt.key !== "Escape") return;
 
-  const openModal = document.querySelector('.modal_is-opened');
+  const openModal = document.querySelector(".modal_is-opened");
 
-  if(openModal){
+  if (openModal) {
     closeModal(openModal);
   }
 }
@@ -99,7 +99,13 @@ document.addEventListener("click", (event) => {
   const modalBackDrop = event.target.closest(".modal");
   const modalContainer = event.target.closest(".modal__container");
 
-  if(modalBackDrop && !modalContainer){
+  resetValidation(
+    editProfileForm,
+    Array.from(editProfileForm.querySelectorAll(settings.inputSelector)),
+    settings
+  );
+
+  if (modalBackDrop && !modalContainer) {
     closeModal(modalBackDrop);
   }
 });
