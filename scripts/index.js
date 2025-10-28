@@ -88,7 +88,7 @@ previewModalCloseBtn.addEventListener("click", () => {
 function handleEscape (evt) {
   if (evt.key !== 'Escape') return;
 
-  const openModal = document.querySelector('modal_is-opened');
+  const openModal = document.querySelector('.modal_is-opened');
 
   if(openModal){
     closeModal(openModal);
