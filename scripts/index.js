@@ -1,3 +1,10 @@
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "./validation.js";
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -33,20 +40,20 @@ const initialCards = [
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileCloseBtn = editProfileModal.querySelector(
-  ".modal__close-button"
+  ".modal__close-button",
 );
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 
 const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 
 const editProfileNameEl = document.querySelector(".profile__title");
 const editProfileDescriptionEl = document.querySelector(
-  ".profile__description"
+  ".profile__description",
 );
 
 // NEW POST MODAL
@@ -102,7 +109,7 @@ document.addEventListener("click", (event) => {
   resetValidation(
     editProfileForm,
     Array.from(editProfileForm.querySelectorAll(settings.inputSelector)),
-    settings
+    settings,
   );
 
   if (modalBackDrop && !modalContainer) {
@@ -191,3 +198,5 @@ initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
+
+enableValidation(settings);
