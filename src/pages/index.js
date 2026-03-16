@@ -1,9 +1,12 @@
+import logo from '../images/logo.svg';
+
+import "./index.css";
 import {
   enableValidation,
   settings,
   resetValidation,
   disableButton,
-} from "./validation.js";
+} from "../scripts/validation.js";
 
 const initialCards = [
   {
