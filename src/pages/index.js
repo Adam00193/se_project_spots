@@ -1,4 +1,4 @@
-import logo from '../images/logo.svg';
+import logo from "../images/logo.svg";
 
 import "./index.css";
 import {
@@ -7,6 +7,8 @@ import {
   resetValidation,
   disableButton,
 } from "../scripts/validation.js";
+
+import Api from "../scripts/Api.js";
 
 const initialCards = [
   {
@@ -38,6 +40,18 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "3619fd9d-808a-44b7-b3de-f2eba564a453",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((cards) => {
+  console.log(cards);
+});
 
 // EDIT PROFILE MODAL
 const editProfileModal = document.querySelector("#edit-profile-modal");
