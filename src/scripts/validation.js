@@ -11,7 +11,7 @@ const showInputError = (formEl, inputEl, errorMessage, config) => {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMessageEl.textContent = errorMessage;
   inputEl.classList.add(config.inputErrorClass);
-  errorMessageEl.classList.add(config.errorClass);''
+  errorMessageEl.classList.add(config.errorClass);
 };
 
 const hideInputError = (formEl, inputEl, config) => {
@@ -78,5 +78,3 @@ export const enableValidation = (config) => {
     setEventListeners(formEl, config);
   });
 };
-
-enableValidation(settings);
